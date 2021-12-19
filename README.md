@@ -5,8 +5,11 @@
 # README
 
 --------------------------------------------------------------------------------------------
+# Method
 
-# >> WEB Methods as followed
+## Using Simple Hough Transform 
+--------------------------------------------------------------------------------------------
+# >> WEB application as followed
 
 ## 0 |   activate running environment and install necessary packages firstly
 ```cmd
@@ -27,7 +30,7 @@ start chrome.exe http://127.0.0.1:5000/
 ```
 
 --------------------------------------------------------------------------------------------
-# >> GUI Methods as followed
+# >> GUI application as followed
 
 ## 0 |   activate running environment and install necessary packages firstly
 ```cmd
