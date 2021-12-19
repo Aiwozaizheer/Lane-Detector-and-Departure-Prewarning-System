@@ -1,0 +1,11 @@
+moviepy
+flask
+werkzeug
+typing
+opencv-python
+numpy
+matplotlib
+pillow
+tkinter
+pyaudio # This may be hard to download which had better install manually.
+
