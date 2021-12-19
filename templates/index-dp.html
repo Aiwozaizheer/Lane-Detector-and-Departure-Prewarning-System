@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en" style="height: 100%;
+            width: 100%;
+            background: url(
+                'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic1.win4000.com%2Fwallpaper%2Fc%2F5383f50bd9289.jpg%3Fdown&refer=http%3A%2F%2Fpic1.win4000.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1640321584&t=d6074841294ff6716908430b4b301be8'
+                )no-repeat;
+            background-size: cover;
+            position: absolute;
+            overflow: hidden;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lane Mark Detection and Vehicle Departure Prewarning</title>
+    <!-- <script src="https://requirejs.org/docs/release/2.3.6/minified/require.js"></script> -->
+    <!-- <script src="scripts\require.js" defer></script> -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+        body{
+            display: inline;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            /* background: #283f0a; */
+            font-family: 'Raleway', sans-serif;
+            font-weight: bold;
+        }
+        a{
+            position: absolute;
+            display: inline-block;
+            padding: 25px 30px;
+            margin: 40px 0;
+            color: #9dd7da;
+            text-decoration: none;
+            text-transform: uppercase;
+            transition: 0.5s;
+            letter-spacing: 4px;
+            overflow: hidden;
+            margin-right: 50%;
+            
+        }
+        a:hover{
+            background: #03e9f4;
+            color: #050801;
+            box-shadow: 0 0 5px #03e9f4,
+            0 0 25px #03e9f4,
+            0 0 50px #03e9f4,
+            0 0 200px #03e9f4;
+            -webkit-box-reflect:below 1px linear-gradient(transparent, #0005);
+        }
+        a:nth-child(1){
+            filter: hue-rotate(270deg);
+        }
+        a:nth-child(2){
+            filter: hue-rotate(110deg);
+        }
+        a span{
+            position: absolute;
+            display: block;
+        }
+        a span:nth-child(1){
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg,transparent,#03e9f4);
+            animation: animate1 1s linear infinite;
+        }
+        @keyframes animate1{
+            0%{
+                left: -100%;
+            }
+            50%,100%{
+                left: 100%;
+            }
+        }
+        a span:nth-child(2){
+            top: -100%;
+            right: 0;
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(180deg,transparent,#03e9f4);
+            animation: animate2 1s linear infinite;
+            animation-delay: 0.25s;
+        }
+        @keyframes animate2{
+            0%{
+                top: -100%;
+            }
+            50%,100%{
+                top: 100%;
+            }
+        }
+        a span:nth-child(3){
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(270deg,transparent,#03e9f4);
+            animation: animate3 1s linear infinite;
+            animation-delay: 0.50s;
+        }
+        @keyframes animate3{
+            0%{
+                right: -100%;
+            }
+            50%,100%{
+                right: 100%;
+            }
+        }
+        
+        
+        a span:nth-child(4){
+            bottom: -100%;
+            left: 0;
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(360deg,transparent,#03e9f4);
+            animation: animate4 1s linear infinite;
+            animation-delay: 0.75s;
+        }
+        @keyframes animate4{
+            0%{
+                bottom: -100%;
+            }
+            50%,100%{
+                bottom: 100%;
+            }
+        }
+        .menu {
+            position: absolute;
+            justify-self: center;
+            top: auto;
+            left: 3%;
+            user-select: none;
+        }
+        .menu li {
+            list-style: none;
+            float: left;
+            white-space: nowrap;
+        }
+        .abstract {
+            margin-top: 5.5cm;
+            margin-left: 3cm;
+            user-select: none;
+            /* color: white; */
+            /* top: 20%;
+            left: 100px; */
+            /* position: absolute; */
+            /* margin-bottom: 10% */
+        }
+        .content {
+            color: white;
+            white-space: pre-line;
+        }
+        .video {
+            /* margin-top: 12.5%; */
+            /* margin-bottom: 30%; */
+            /* margin-left: 65%; */
+            /* margin-right: 10%; */
+            top: 210px;
+            left: 65%;
+            position: absolute;
+            /* overflow: hidden; */
+            /* width: auto; */
+            /* height: auto; */
+        }
+        .div_foot {
+        bottom: 0;
+        position: absolute;
+        height: 50px;
+        text-align: center;
+        line-height: 50px;
+        width: 100%;
+        user-select: none;
+        color: whitesmoke;
+        }
+        </style>
+</head>
+<body>
+        <ul class="menu">
+            <!-- <form action="/" method="post">
+            </form>
+            <form action="/products" method="post">
+            </form>             -->
+            <li style="float: left;"><a href="#" style="display: inline-flex;">HOME</a></li>
+            <li style="float: left;"><a href="#" style="display: inline-flex;margin-left: 6cm;">PRODUCTS</a></li>
+            <li style="float: left;"><a href="#" style="display:inline-flex;left: 14.5cm;">CODES</a></li>
+            <li style="float: left;"><a href="#" style="display:inline-flex;left: 21cm;">HELP</a></li>
+            <li style="float: left;"><a href="#" style="display:inline-flex;left: 27CM;">CONTACT US</a></li>
+            <li style="float: left;"><a href="#" style="display:inline-flex;left: 39.8cm;">SIGN IN-></a></li>
+        </ul>
+            
+
+    <div class="abstract">
+        <h1 class="content" style="font-size: 50px;">
+            Welcome To My Website !
+        </h1>    
+        <h3 class="content" style="line-height: 40px;">
+            <span style="font-size: 40px;">M</span>ost of the crash deaths and serious injuries are caused 
+            by car crashes caused by off-lane accidents, 
+            which usually start with accidental off-lane accidents. 
+            <span style="font-size: 40px;">I</span>n fact, 60% of road traffic accidents are caused by 
+            accidental drifting off the lane.
+        </h3>
+        <!-- <form action="/try" method="POST" id="form"> -->
+            <a href="#" id="tryProducts"><span></span><span></span><span></span><span></span>
+                LET'S TRY
+            </a>
+        <form action="/try" method="post" id="video">
+            <input type="file" name="url" style="position:absolute;margin-left:13cm;top:19cm;-web-kit-appearance:none;-moz-appearance: none;background-color:transparent;font-size:1.4em;height:1.5em;border-radius:4px;border:1px solid #c8cccf;color:#FFFFFF;outline:0;font-family: 'Raleway', sans-serif;
+                                        font-weight: bold;" />
+
+            <!-- <button type="submit">ok</button> -->
+        </form>
+        <script>
+            document.getElementById("tryProducts").addEventListener("click", ()=>{document.getElementById("video").submit()});
+        </script>
+
+        <!-- </form> -->
+    </div>
+    <div class="video">
+        <video src="https://static.mobileye.com/website/common/video/avf_ldw.mp4" muted="" autoplay="" playsinline="" loop="" data-object-fit="cover"
+        height="480" width="560">
+        </video>
+        <h3 style="letter-spacing: 3px;text-align: center;font-size: 20px;color: white;font-family: 'Raleway', sans-serif;font-weight: bold;list-style: none;user-select: none;">
+            DISPLAY&nbsp;&nbsp;&nbsp;&nbsp;OF&nbsp;&nbsp;&nbsp;&nbsp;PRODUCTS
+        </h3>
+    </div>
+    <div class="div_foot">
+        &copy;2021-2022&nbsp;&nbsp;&nbsp;1929409014@stu.suda.edu.cn&nbsp;&nbsp;|&nbsp;&nbsp;SOOCHOW&nbsp;&nbsp;UNIVERSITY&nbsp;&nbsp;&nbsp;<span style="color: wheat;font-size: 15px;">All&nbsp;&nbsp;RIGHT&nbsp;&nbsp;RESERVED.</span>
+        </div>
+</body>
+</html>
