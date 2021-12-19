@@ -7,11 +7,15 @@
 --------------------------------------------------------------------------------------------
 ## Method
 
-### Using Simple Hough Transform 
+### Using Simple Hough Transform and so on
 --------------------------------------------------------------------------------------------
-## WEB application as followed
+## Display of a shortcut of the output video
 
-## 0 |   activate running environment and install necessary packages firstly
+![test](test_display.png)
+--------------------------------------------------------------------------------------------
+## A: WEB application as followed
+--------------------------------------------------------------------------------------------
+### 0 |   activate running environment and install necessary packages firstly
 ```cmd
 activate [-environment] # python environment, for axample: base
 pip install -r requirements.txt
@@ -28,10 +32,9 @@ python myServer.py
 ```cmd
 start chrome.exe http://127.0.0.1:5000/
 ```
-
 --------------------------------------------------------------------------------------------
-## GUI application as followed
-
+## B: GUI application as followed
+--------------------------------------------------------------------------------------------
 ### 0 |   activate running environment and install necessary packages firstly
 ```cmd
 activate [-environment] # python environment, for axample: base
@@ -44,5 +47,6 @@ pip install -r requirements.txt
 ```cmd
 python gui.py
 ```
+--------------------------------------------------------------------------------------------
 ## The `data_Trim.mp4` as test file has been uploaded onto Wiki.
 ## Oh, I'm so sorry that I personally cannot upload the testvideo `data_Trim.mp4`...
