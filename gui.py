@@ -16,7 +16,8 @@ isplaying = False
 
 lbVideo = tkinter.Label(root, bg="white")
 lbVideo.pack(fill=tkinter.BOTH, expand=tkinter.YES)
-
+loading = tkinter.Label(root, text="loading...", fg="black")
+loading.pack()
 
 def play_video(video):
     vw = video.w
@@ -61,8 +62,7 @@ def open_video():
     isplaying = False
     fn = askopenfilename(title='Open the Video File',
                          filetypes=[('video', '*.mp4 *.avi')])
-    loading = tkinter.Label(root, text="loading...", ng="black")
-    loading.pack()
+
     annotate_video(fn, output_file=fn.split(".")[0] + "_out." + fn.split(".")[1])
     loading.destroy()
     fn = fn.split(".")[0] + "_out." + fn.split(".")[1]
